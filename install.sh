@@ -15,7 +15,5 @@ docker build -t hello-app .
 # Expose the http endpoint using a loadbalancer service
 helm install hello ./chart
 
-# Run a minikube tunnel in the background
-kubectl port-forward --address 0.0.0.0 services/hello 8081:80 
-
-
+# Allowing port forwarding to allow incoming trafic
+kubectl port-forward --address 0.0.0.0 services/hello 8081:80
